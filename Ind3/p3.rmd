@@ -1,16 +1,11 @@
-# Individual Assignment 3
-Complete the following lessons in the Swirl “R Programming” course:
-#11 vapply and tapply
-#13 Simulation
-#14 Dates and Times
-(Congratulations! You have now completed the entire R Programming course!)
-After completing the readings and tutorial lessons, answer the following questions. Please include the questions with your answers in a document, and then submit the completed document to Blackboard. Please include your first and last name in your filename. For example, if I was submitting this assignment I would use the following filename: marcel_minutolo_wk5_written_assign_mbad6520.docx
-Assessment
-This assignment is worth up to 50 points. You will be assessed on the following:
-Degree to which your responses show evidence that you engaged with and understood the assigned readings and Swirl lessons
-Completeness of your responses
-Degree to which your responses reflect critical thought, when applicable (Most of the questions based on the Swirl course lessons are straightforward and do not require critical thought.)
- 
+---
+title: "Individual Assignment 3"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 ## Questions
 1.	A data analyst working in your group reports to you that he is developing a k-NN model to predict the yearly sales to potential new customers, and that he is currently using a k-fold cross-validation procedure to settle on the best value for k. Explain this to your boss.
 2.	How do we prevent Euclidean distance from being biased by attributes with wide ranges of values?
@@ -32,3 +27,20 @@ churn_test <- churn_data[-idx,]
 14.	Which R function would you use to get the current date from the system?
 15.	What is a POSIX date?
 
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

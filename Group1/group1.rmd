@@ -1,3 +1,7 @@
+---
+title: "Group work"
+output: github_document
+---
 # group work
 Working in groups of no more than 5, use the Lakhani, K.R., Iansiti, M., & Herman, K. (2015). GE y el Internet Industrial. Available in Harvard Business School course pack 618-S05 address the following questions:
 
@@ -8,3 +12,29 @@ Working in groups of no more than 5, use the Lakhani, K.R., Iansiti, M., & Herma
 3.    Who will be GE’s most feared competitor in five years? Why?
 
 4.    What do you think GE’s stock price will be in five years? Will it outperform the market?
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
