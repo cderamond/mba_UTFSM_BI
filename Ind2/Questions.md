@@ -1,0 +1,16 @@
+# Questions:
+1. What function would you use to show the directory on your computer that R is using as its working directory?
+2. What function would you use to list all the variables (“objects”) that are defined in your R workspace?
+3. What function would you use to set your R working directory to a different directory?
+4. Write out an R function to create a vector that consists of the integers 1-5 repeated 50 times: 1,2,3,4,5,1,2,3,4,5,1,2,3,4,5 , ...
+5. What is the name of the R class that has rows and columns, and is the default class R uses when reading in files with functions like read.csv () or read.table ()
+6. What function would you use to see how many rows your data has?
+7. What function would you use to see the first several rows of your data?
+8. 1What does the summary () function do?
+9. What does the str () function do?
+10. What base graphics functions is used to create a scatterplot?
+11. What parameters would you use to label the x and y axes of a graphics plot?
+Copy and paste into your document the scatterplot produced from the cars data that plots the points as triangles (You can copy and paste as bitmap or metafile directly from the R graphics window)
+12. What function would you use to create a boxplot?
+13. What function would you use to create a histogram?
+14. What is the URL for the recommended web page to use to explore other elements of base graphics?
