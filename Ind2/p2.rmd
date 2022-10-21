@@ -15,7 +15,11 @@ knitr::opts_chunk$set(echo = TRUE)
 5. What is the name of the R class that has rows and columns, and is the default class R uses when reading in files with functions like read.csv () or read.table ()
 6. What function would you use to see how many rows your data has?
 7. What function would you use to see the first several rows of your data?
-8. 1What does the summary () function do?
+8. What does the summary () function do?
+delivers summary stats on the given variable/set
+```{r cars, echo=TRUE}
+summary(cars)
+```
 9. What does the str () function do?
 10. What base graphics functions is used to create a scatterplot?
 11. What parameters would you use to label the x and y axes of a graphics plot?
