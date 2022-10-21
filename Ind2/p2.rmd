@@ -3,49 +3,90 @@ title: "Individual work 2"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Questions:
 1. What function would you use to show the directory on your computer that R is using as its working directory?
+```{r }
+ getwd()
+```
 2. What function would you use to list all the variables (“objects”) that are defined in your R workspace?
+`objects()` does it
+```{r }
+ objects()
+```
+`ls()` does the same
+```{r }
+ ls()
+```
 3. What function would you use to set your R working directory to a different directory?
+```
+    setwd('path')
+```
 4. Write out an R function to create a vector that consists of the integers 1-5 repeated 50 times: 1,2,3,4,5,1,2,3,4,5,1,2,3,4,5 , ...
+first the function:
+```{r }
+l1 <- function(a, b, n=50) {
+    x <- rep(seq(a, b), n)
+    return(x)
+}
+```
+now let's see if it works
+```{r }
+    a <- l1(1, 5, 20)
+    b <-l1(1, 10)
+    print(a)
+    print(b)
+```
+
+
 5. What is the name of the R class that has rows and columns, and is the default class R uses when reading in files with functions like read.csv () or read.table ()
+Dataframe
+```{r }
+ str(iris)
+```
 6. What function would you use to see how many rows your data has?
+```{r }
+ nrow(mtcars)
+```
 7. What function would you use to see the first several rows of your data?
+```{r }
+ head(iris)
+```
 8. What does the summary () function do?
 delivers summary stats on the given variable/set
-```{r cars, echo=TRUE}
-summary(cars)
-```
-9. What does the str () function do?
-10. What base graphics functions is used to create a scatterplot?
-11. What parameters would you use to label the x and y axes of a graphics plot?
-Copy and paste into your document the scatterplot produced from the cars data that plots the points as triangles (You can copy and paste as bitmap or metafile directly from the R graphics window)
-12. What function would you use to create a boxplot?
-13. What function would you use to create a histogram?
-14. What is the URL for the recommended web page to use to explore other elements of base graphics?
-
-## GitHub Documents
-
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
-
-## Including Code
-
-You can include R code in the document as follows:
 
 ```{r cars}
 summary(cars)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
+9. What does the str () function do?
+delivers structure of the variable
+```{r cars2}
+str(cars)
+```
+10. What base graphics functions is used to create a scatterplot?
+plot 
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
+11. What parameters would you use to label the x and y axes of a graphics plot?
+Copy and paste into your document the scatterplot produced from the cars data that plots the points as triangles (You can copy and paste as bitmap or metafile directly from the R graphics window)
+```{r }
+attach(mtcars)
+plot(wt, mpg, main="Scatterplot",
+   xlab="Car Weight ", ylab="Miles Per Gallon ", pch=24)
+```
+12. What function would you use to create a boxplot?
+```{r }
+    boxplot(hp ~ am, data = mtcars)
+```
+13. What function would you use to create a histogram?
+```{r }
+    hist(iris[,2])
+```
+14. What is the URL for the recommended web page to use to explore other elements of base graphics?
+https://compgenomr.github.io/book/plotting-in-r-with-base-graphics.html
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+though for real `ggplot2` is just the best there is: https://r-graph-gallery.com/ggplot2-package.html 
