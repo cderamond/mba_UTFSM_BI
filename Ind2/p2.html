@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="individual-work-2">Individual work 2</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<h1 id="questions">Questions:</h1>
+<ol style="list-style-type: decimal">
+<li>What function would you use to show the directory on your computer
+that R is using as its working directory?</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;c:/Users/cdera/OneDrive/MBA/S4 - BI/scripts/Ind2&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>What function would you use to list all the variables (“objects”)
+that are defined in your R workspace? <code>objects()</code> does
+it</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">objects</span>()</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<p><code>ls()</code> does the same</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">ls</span>()</span></code></pre></div>
+<pre><code>## character(0)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>What function would you use to set your R working directory to a
+different directory?</li>
+</ol>
+<!-- -->
+
+<pre><code>    setwd(&#39;path&#39;)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Write out an R function to create a vector that consists of the
+integers 1-5 repeated 50 times: 1,2,3,4,5,1,2,3,4,5,1,2,3,4,5 , … first
+the function:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b, <span class="at">n=</span><span class="dv">50</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">seq</span>(a, b), n)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>now let’s see if it works</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span> <span class="fu">l1</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">20</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    b <span class="ot">&lt;-</span><span class="fu">l1</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(a)</span></code></pre></div>
+<pre><code>##   [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2
+##  [38] 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4
+##  [75] 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(b)</span></code></pre></div>
+<pre><code>##   [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+##  [26]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+##  [51]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+##  [76]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [101]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [126]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [151]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [176]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [201]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [226]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [251]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [276]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [301]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [326]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [351]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [376]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [401]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [426]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10
+## [451]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+## [476]  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>What is the name of the R class that has rows and columns, and is
+the default class R uses when reading in files with functions like
+read.csv () or read.table () Dataframe</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">str</span>(iris)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>What function would you use to see how many rows your data has?</li>
+</ol>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">nrow</span>(mtcars)</span></code></pre></div>
+<pre><code>## [1] 32</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>What function would you use to see the first several rows of your
+data?</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">head</span>(iris)</span></code></pre></div>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li>What does the summary () function do? delivers summary stats on the
+given variable/set</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>What does the str () function do? delivers structure of the
+variable</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(cars)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    50 obs. of  2 variables:
+##  $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
+##  $ dist : num  2 10 4 22 16 10 18 26 34 17 ...</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li>What base graphics functions is used to create a scatterplot? plot
+<img src="data:image/png;base64,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" /><!-- --></li>
+<li>What parameters would you use to label the x and y axes of a
+graphics plot? Copy and paste into your document the scatterplot
+produced from the cars data that plots the points as triangles (You can
+copy and paste as bitmap or metafile directly from the R graphics
+window)</li>
+</ol>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attach</span>(mtcars)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(wt, mpg, <span class="at">main=</span><span class="st">&quot;Scatterplot&quot;</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>   <span class="at">xlab=</span><span class="st">&quot;Car Weight &quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Miles Per Gallon &quot;</span>, <span class="at">pch=</span><span class="dv">24</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --> 12.
+What function would you use to create a boxplot?</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">boxplot</span>(hp <span class="sc">~</span> am, <span class="at">data =</span> mtcars)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --> 13.
+What function would you use to create a histogram?</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">hist</span>(iris[,<span class="dv">2</span>])</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --> 14.
+What is the URL for the recommended web page to use to explore other
+elements of base graphics? <a href="https://compgenomr.github.io/book/plotting-in-r-with-base-graphics.html">https://compgenomr.github.io/book/plotting-in-r-with-base-graphics.html</a></p>
+<p>though for real <code>ggplot2</code> is just the best there is: <a href="https://r-graph-gallery.com/ggplot2-package.html">https://r-graph-gallery.com/ggplot2-package.html</a></p>
+
+</body>
+</html>
