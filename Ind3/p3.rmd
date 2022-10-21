@@ -3,44 +3,74 @@ title: "Individual Assignment 3"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+@cderamond - MBA UTFSM
+
 ## Questions
 1.	A data analyst working in your group reports to you that he is developing a k-NN model to predict the yearly sales to potential new customers, and that he is currently using a k-fold cross-validation procedure to settle on the best value for k. Explain this to your boss.
+```{r }
+summary(cars)
+```
 2.	How do we prevent Euclidean distance from being biased by attributes with wide ranges of values?
+```{r }
+summary(cars)
+```
 3.	In a sentence or two, explain how k (in “k-NN”) is related to model complexity.
+```{r }
+summary(cars)
+```
 4.	A data analyst working for you reports that she has decided to use a standard OLS linear regression model instead of a weighted k-NN regression model, even though the k-NN regression model seems to be providing slightly higher accuracy on the holdout test set, because she believes that you will have to explain the model in great detail in order to get support from important stakeholders within the organization. What does she mean? Do you agree with her?
+```{r }
+summary(cars)
+```
 5.	Why would we want to perform some type of feature selection before building a k-NN model? Name one feature selection method for categorical target variables and one for numeric target variables.
+```{r }
+summary(cars)
+```
 6.	A data analyst reports to you that the team is building a “similarity-moderated k-NN regression model, using Manhattan distance instead of Euclidean distance.” What does that (whole phrase) mean?
+```{r }
+summary(cars)
+```
 7.	You report to your boss that your data science team is building a k-means cluster model to help better understand whether or not your customers occur in natural groupings. He laughs and says, “I don’t know what a k-means cluster model is. Matter of fact, I don’t even know what a cluster model is.” How would you further explain it to him in simple terms?
+```{r }
+summary(cars)
+```
 8.	Explain the k-means clustering algorithm by writing out the steps as bullet points or a numbered list.
+```{r }
+summary(cars)
+```
 9.	How can supervised learning be used to develop good cluster descriptions?
+```{r }
+summary(cars)
+```
 10.	What is the difference between a characteristic description (of a cluster) and a differential description?
+```{r }
+summary(cars)
+```
 11.	What is the difference between the R functions lapply() and vapply()? Structure your answer around the advantages and disadvantages of each.
+```{r }
+summary(cars)
+```
 12.	Explain what the following R code is doing, and try to guess why we would do this. Assume that you know that the churn.csv dataset has 20,000 rows.
 churn_data <- read.csv('churn.csv')
 idx <- sample(1:nrow(churn_data), 16000)
 churn_train <- churn_data[idx,]
 churn_test <- churn_data[-idx,]
-13.	Which R function would you use to randomly draw some numbers from the standard normal distribution?
-14.	Which R function would you use to get the current date from the system?
-15.	What is a POSIX date?
 
-## Including Code
-
-You can include R code in the document as follows:
-
-```{r cars}
+```{r }
 summary(cars)
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+13.	Which R function would you use to randomly draw some numbers from the standard normal distribution?
+```{r }
+summary(cars)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+14.	Which R function would you use to get the current date from the system?
+```{r }
+summary(cars)
+```
+15.	What is a POSIX date?
+```{r }
+summary(cars)
+```
