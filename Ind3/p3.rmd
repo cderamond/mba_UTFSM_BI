@@ -2,8 +2,10 @@
 title: "Individual Assignment 3"
 output: github_document
 ---
+# Individual Assignment 3
+@cderamond - MBA UTFSM
 
-```{r setup}
+```{r setup, echo= FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 @cderamond - MBA UTFSM
