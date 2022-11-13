@@ -607,152 +607,98 @@ padding-top: 0px;
 <p>@cderamond - MBA UTFSM</p>
 <h2 id="questions">Questions</h2>
 <ol style="list-style-type: decimal">
-<li>A data analyst working in your group reports to you that he is
+<li><p>A data analyst working in your group reports to you that he is
 developing a k-NN model to predict the yearly sales to potential new
 customers, and that he is currently using a k-fold cross-validation
 procedure to settle on the best value for k. Explain this to your
-boss.</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>How do we prevent Euclidean distance from being biased by attributes
-with wide ranges of values?</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>In a sentence or two, explain how k (in “k-NN”) is related to model
-complexity.</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>A data analyst working for you reports that she has decided to use a
-standard OLS linear regression model instead of a weighted k-NN
+boss.</p>
+<p>k-fold is a procedure that aims to avoid bias on sampling by
+retraining and re-testing the model k times over the dataset split on
+equal k batches. Is a rotation exercise done over the set k times,
+always leaving 1 “k-fold” in which to test the model.</p></li>
+<li><p>How do we prevent Euclidean distance from being biased by
+attributes with wide ranges of values?</p>
+<p>Use a method for weighting distance or standarization.</p></li>
+<li><p>In a sentence or two, explain how k (in “k-NN”) is related to
+model complexity.</p>
+<p>k is the number of points to be randomly set in the space, as the
+models are complex or have elevated number of dimensions, the
+calculation gets trickier.</p></li>
+<li><p>A data analyst working for you reports that she has decided to
+use a standard OLS linear regression model instead of a weighted k-NN
 regression model, even though the k-NN regression model seems to be
 providing slightly higher accuracy on the holdout test set, because she
 believes that you will have to explain the model in great detail in
 order to get support from important stakeholders within the
-organization. What does she mean? Do you agree with her?</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Why would we want to perform some type of feature selection before
-building a k-NN model? Name one feature selection method for categorical
-target variables and one for numeric target variables.</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>A data analyst reports to you that the team is building a
+organization. What does she mean? Do you agree with her?</p>
+<p>It could mean she has low number of observations, higher accuracy
+might be due to overfitting. Normally if the data indicates a linear
+function, simplicity is best and OLS might be better. On the other hand,
+<sub>k-NN</sub> is easy to explain, in concept and the explainability of
+the model: you have a different regression calculated on the average of
+the k-neighbors.</p></li>
+<li><p>Why would we want to perform some type of feature selection
+before building a k-NN model? Name one feature selection method for
+categorical target variables and one for numeric target variables.</p>
+<p>For categorical values a random tree classifier might be good choice.
+For numerical values any kind of dimensional reduction (PCA for
+example), should do.</p></li>
+<li><p>A data analyst reports to you that the team is building a
 “similarity-moderated k-NN regression model, using Manhattan distance
-instead of Euclidean distance.” What does that (whole phrase) mean?</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="7" style="list-style-type: decimal">
-<li>You report to your boss that your data science team is building a
+instead of Euclidean distance.” What does that (whole phrase) mean?</p>
+<p>The distance is calculated as a ~taxi cab~ distance, it being the
+absolute sum of the orthogonal decomposition from the euclidean
+distance. In other words, imagine how you travel around in a
+city.</p></li>
+<li><p>You report to your boss that your data science team is building a
 k-means cluster model to help better understand whether or not your
 customers occur in natural groupings. He laughs and says, “I don’t know
 what a k-means cluster model is. Matter of fact, I don’t even know what
 a cluster model is.” How would you further explain it to him in simple
-terms?</li>
+terms?</p></li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>Normally the explanation is: &gt; Imagine you put plot all the data,
+now you will have different shapes delimited by those points that are
+closer to each other usual center of mass problem. &gt; The hypothesis
+behind this, is that those neighbors will share characteristics.</p>
 <ol start="8" style="list-style-type: decimal">
-<li>Explain the k-means clustering algorithm by writing out the steps as
-bullet points or a numbered list.</li>
+<li><p>Explain the k-means clustering algorithm by writing out the steps
+as bullet points or a numbered list.</p>
+<blockquote>
+<p><strong>Steps for k-NN</strong> 0. pick k value</p>
+<ol style="list-style-type: decimal">
+<li>k random points are set on the space</li>
+<li>assign each point to the closest point (distance calculation may
+vary)</li>
+<li>recompute new cluster centers iterate on steps 2 and 3 until
+convergence.</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="9" style="list-style-type: decimal">
-<li>How can supervised learning be used to develop good cluster
-descriptions?</li>
-</ol>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="10" style="list-style-type: decimal">
-<li>What is the difference between a characteristic description (of a
-cluster) and a differential description?</li>
-</ol>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<ol start="11" style="list-style-type: decimal">
-<li>What is the difference between the R functions lapply() and
+</blockquote></li>
+<li><p>How can supervised learning be used to develop good cluster
+descriptions?</p>
+<p>a supervised model for classication will create and weight relevant
+classifiers.</p></li>
+<li><p>What is the difference between a characteristic description (of a
+cluster) and a differential description?</p>
+<p>Differential tries to estimate a gradient among the k-neighbors,
+whereas characteristic is normal distance based, which does not really
+account for the underlying function.</p></li>
+<li><p>What is the difference between the R functions lapply() and
 vapply()? Structure your answer around the advantages and disadvantages
-of each.</li>
+of each.</p></li>
 </ol>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cars)</span></code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<p><code>apply</code> is a lambda function, it executes a given function
+over an array. <code>lapply</code> is apply to a list (complex
+Structure). <code>vapply</code> lets you select the data type of the
+output.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,            </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x2 =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">x3 =</span> <span class="dv">3</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">apply</span>(dat,<span class="dv">1</span>,sum)</span></code></pre></div>
+<pre><code>## [1]  6  8 10 12 14</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">vapply</span>(dat, length, <span class="fu">integer</span>(<span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## x1 x2 x3 
+##  5  5  5</code></pre>
 <ol start="12" style="list-style-type: decimal">
 <li>Explain what the following R code is doing, and try to guess why we
 would do this. Assume that you know that the churn.csv dataset has
@@ -760,8 +706,8 @@ would do this. Assume that you know that the churn.csv dataset has
 sample(1:nrow(churn_data), 16000) churn_train &lt;- churn_data[idx,]
 churn_test &lt;- churn_data[-idx,]</li>
 </ol>
-<p>This is standar procedure to read a CSV data source and split it into
-randomized train and test set</p>
+<p>This is standard procedure to read a CSV data source and split it
+into randomized train and test set</p>
 <pre><code>    churn_data &lt;- read.csv(&#39;churn.csv&#39;) # read data
     idx &lt;- sample(1:nrow(churn_data), 16000) #split index with 16k samples from the length of dataset
     churn_train &lt;- churn_data[idx,] # define train set
@@ -770,26 +716,26 @@ randomized train and test set</p>
 <li>Which R function would you use to randomly draw some numbers from
 the standard normal distribution?</li>
 </ol>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">20</span>)</span></code></pre></div>
-<pre><code>##  [1] -0.06417472 -0.36919629 -1.50603087  1.52603116  2.04976304  0.20971139
-##  [7] -0.37521636 -0.24087802  0.83343494 -1.22106453 -0.83320085 -0.30502296
-## [13]  0.68383939 -1.94937311  2.30690981 -0.48276371  0.20520861 -1.13173267
-## [19] -1.81334839  0.68238278</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">20</span>)</span></code></pre></div>
+<pre><code>##  [1] -0.2880423 -0.7361104  0.4242357  1.8589778 -1.2536664  1.3137408
+##  [7]  0.5529574 -0.7319361  1.2278631 -0.4532393 -0.7922563  0.4003026
+## [13] -0.9182291 -0.0175759 -0.2655825 -1.0816319  0.6723108  1.1295969
+## [19]  1.0471515 -0.9325637</code></pre>
 <ol start="14" style="list-style-type: decimal">
 <li>Which R function would you use to get the current date from the
 system?</li>
 </ol>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Sys.time</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2022-11-12 21:46:20 -03&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Sys.time</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;2022-11-12 23:55:39 -03&quot;</code></pre>
 <ol start="15" style="list-style-type: decimal">
-<li>What is a POSIX date? Is type of data that stores Date and time
-along with timezone.</li>
+<li>What is a POSIX date?</li>
 </ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span><span class="fu">Sys.time</span>()</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str</span>(a)</span></code></pre></div>
-<pre><code>##  POSIXct[1:1], format: &quot;2022-11-12 21:46:20&quot;</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.POSIXlt</span>(a, <span class="at">tz=</span><span class="st">&quot;UTC&quot;</span> ) <span class="co">#same but UTC instead</span></span></code></pre></div>
-<pre><code>## [1] &quot;2022-11-13 00:46:20 UTC&quot;</code></pre>
+<p>Is type of data that stores Date and time along with timezone.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    a <span class="ot">&lt;-</span><span class="fu">Sys.time</span>()</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str</span>(a)</span></code></pre></div>
+<pre><code>##  POSIXct[1:1], format: &quot;2022-11-12 23:55:39&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.POSIXlt</span>(a, <span class="at">tz=</span><span class="st">&quot;UTC&quot;</span> ) <span class="co">#same but UTC instead</span></span></code></pre></div>
+<pre><code>## [1] &quot;2022-11-13 02:55:39 UTC&quot;</code></pre>
 
 </body>
 </html>
