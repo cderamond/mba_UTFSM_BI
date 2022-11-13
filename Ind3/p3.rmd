@@ -12,21 +12,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Questions
 1.	A data analyst working in your group reports to you that he is developing a k-NN model to predict the yearly sales to potential new customers, and that he is currently using a k-fold cross-validation procedure to settle on the best value for k. Explain this to your boss.
-```{r }
-summary(cars)
-```
+k-fold is a procedure that aims to avoid bias on sampling by retraining and re-testing the model k times over the dataset split on equal k batches. 
+Is a rotation exercise done over the set k times, always leaving 1 "k-fold" in which to test the model.
+
 2.	How do we prevent Euclidean distance from being biased by attributes with wide ranges of values?
-```{r }
-summary(cars)
-```
+Use a method for weighting distance or standarization.
+
 3.	In a sentence or two, explain how k (in “k-NN”) is related to model complexity.
-```{r }
-summary(cars)
-```
+k is the number of points to be randomly set in the space, as the models are complex or have elevated number of dimensions, the calculation gets trickier.
+
 4.	A data analyst working for you reports that she has decided to use a standard OLS linear regression model instead of a weighted k-NN regression model, even though the k-NN regression model seems to be providing slightly higher accuracy on the holdout test set, because she believes that you will have to explain the model in great detail in order to get support from important stakeholders within the organization. What does she mean? Do you agree with her?
-```{r }
-summary(cars)
-```
+
+
 5.	Why would we want to perform some type of feature selection before building a k-NN model? Name one feature selection method for categorical target variables and one for numeric target variables.
 ```{r }
 summary(cars)
@@ -52,8 +49,15 @@ summary(cars)
 summary(cars)
 ```
 11.	What is the difference between the R functions lapply() and vapply()? Structure your answer around the advantages and disadvantages of each.
+`apply` is a lambda function, it executes a given function over an array.
+`lapply` is apply to a list (complex Structure).
+`vapply` lets you select the data type of the output.
 ```{r }
-summary(cars)
+    dat <- data.frame(x1 = 1:5,            
+                      x2 = 2:6,
+                      x3 = 3)
+    apply(dat,1,sum)
+    vapply(dat, length, integer(1))
 ```
 12.	Explain what the following R code is doing, and try to guess why we would do this. Assume that you know that the churn.csv dataset has 20,000 rows.
 churn_data <- read.csv('churn.csv')
@@ -61,18 +65,25 @@ idx <- sample(1:nrow(churn_data), 16000)
 churn_train <- churn_data[idx,]
 churn_test <- churn_data[-idx,]
 
-```{r }
-summary(cars)
+This is standard procedure to read a CSV data source and split it into randomized train and test set
+```{r}
+    churn_data <- read.csv('churn.csv') # read data
+    idx <- sample(1:nrow(churn_data), 16000) #split index with 16k samples from the length of dataset
+    churn_train <- churn_data[idx,] # define train set
+    churn_test <- churn_data[-idx,] # define test set
 ```
 13.	Which R function would you use to randomly draw some numbers from the standard normal distribution?
 ```{r }
-summary(cars)
+rnorm(20)
 ```
 14.	Which R function would you use to get the current date from the system?
 ```{r }
-summary(cars)
+    Sys.time()
 ```
 15.	What is a POSIX date?
+Is type of data that stores Date and time along with timezone.
 ```{r }
-summary(cars)
+    a <-Sys.time()
+    str(a)
+    as.POSIXlt(a, tz="UTC" ) #same but UTC instead
 ```
